@@ -30,8 +30,11 @@ const Home: FC = () => {
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 halo-heading">
               Aurora <span className="text-blue-400">AI</span> terminal.
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 halo-text">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto halo-text">
               We create AI solutions that make working with the terminal easier.
+            </p>
+            <p className="text-xl text-sky-400 max-w-3xl mx-auto mb-10 halo-text">
+              100% Free and Open Source
             </p>
 
             {/* Installation curl command */}
@@ -92,10 +95,24 @@ const Home: FC = () => {
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
-                href="#services"
-                className="halo-button-primary py-3 px-8 rounded-lg text-white font-medium transition-colors"
+                href="https://github.com/Firdavs9512/aurora-agent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="halo-button-primary py-3 px-8 rounded-lg text-white font-medium transition-colors flex items-center justify-center"
               >
-                Our Services
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                GitHub
               </a>
               <a
                 href="#contact"

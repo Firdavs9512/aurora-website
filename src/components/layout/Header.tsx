@@ -25,6 +25,7 @@ const Header: FC = () => {
 
   const navItems = [
     { name: "services", path: "#services" },
+    { name: "providers", path: "#providers" },
     { name: "demo", path: "#demo" },
     { name: "contact", path: "#contact" },
   ];

@@ -24,7 +24,7 @@ const Home: FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-4 sm:py-6">
         {/* Background gradient is now handled by BackgroundAnimation component */}
 
         <div className="container mx-auto px-4 relative z-10">
@@ -34,25 +34,25 @@ const Home: FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 halo-heading">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 halo-heading">
               Aurora <span className="text-blue-400">AI</span> terminal.
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto halo-text">
+            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto halo-text mb-2">
               We create AI solutions that make working with the terminal easier.
             </p>
-            <p className="text-xl text-sky-400 max-w-3xl mx-auto mb-10 halo-text">
+            <p className="text-lg sm:text-xl text-sky-400 max-w-3xl mx-auto mb-10 sm:mb-8 halo-text">
               100% Free and Open Source
             </p>
 
             {/* Installation curl command */}
             <motion.div
-              className="mb-8"
+              className="mb-10 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div className="flex flex-col sm:flex-row items-center justify-center bg-[#000011]/40 backdrop-blur-md rounded-lg border border-white/5 overflow-hidden max-w-3xl mx-auto">
-                <div className="flex-grow p-3 sm:p-4 font-mono text-sm text-gray-300 text-left overflow-x-auto whitespace-nowrap">
+                <div className="flex-grow p-3 sm:p-4 font-mono text-xs sm:text-sm text-gray-300 text-left overflow-x-auto whitespace-nowrap">
                   $ {installCommand}
                 </div>
                 <button
@@ -140,16 +140,18 @@ const Home: FC = () => {
       <section id="services" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Our Services</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Our Services
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
               Aurora terminal agent provides you with the following capabilities
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#1a1a2e] p-8 rounded-lg">
-              <div className="text-blue-400 text-4xl mb-4">🔍</div>
-              <h3 className="text-xl font-bold text-white mb-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-[#1a1a2e] p-6 sm:p-8 rounded-lg">
+              <div className="text-blue-400 text-3xl sm:text-4xl mb-4">🔍</div>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                 Smart Command Suggestions
               </h3>
               <p className="text-gray-300">
@@ -157,9 +159,9 @@ const Home: FC = () => {
                 context.
               </p>
             </div>
-            <div className="bg-[#1a1a2e] p-8 rounded-lg">
-              <div className="text-blue-400 text-4xl mb-4">💬</div>
-              <h3 className="text-xl font-bold text-white mb-3">
+            <div className="bg-[#1a1a2e] p-6 sm:p-8 rounded-lg">
+              <div className="text-blue-400 text-3xl sm:text-4xl mb-4">💬</div>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                 Natural Language Interface
               </h3>
               <p className="text-gray-300">
@@ -167,9 +169,9 @@ const Home: FC = () => {
                 memorizing complex command syntax.
               </p>
             </div>
-            <div className="bg-[#1a1a2e] p-8 rounded-lg">
-              <div className="text-blue-400 text-4xl mb-4">📝</div>
-              <h3 className="text-xl font-bold text-white mb-3">
+            <div className="bg-[#1a1a2e] p-6 sm:p-8 rounded-lg">
+              <div className="text-blue-400 text-3xl sm:text-4xl mb-4">📝</div>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                 Command Explanations
               </h3>
               <p className="text-gray-300">
@@ -185,17 +187,19 @@ const Home: FC = () => {
       <section id="providers" className="py-20 bg-[#0f0f1a]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">AI Providers</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              AI Providers
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
               Aurora terminal agent works with the following AI providers
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {/* OpenAI */}
-              <div className="bg-[#1a1a2e] p-8 rounded-lg flex flex-col items-center">
-                <div className="w-24 h-24 mb-6 flex items-center justify-center">
+              <div className="bg-[#1a1a2e] p-6 sm:p-8 rounded-lg flex flex-col items-center">
+                <div className="w-16 sm:w-24 h-16 sm:h-24 mb-6 flex items-center justify-center">
                   <svg
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
@@ -218,8 +222,8 @@ const Home: FC = () => {
               </div>
 
               {/* Claude */}
-              <div className="bg-[#1a1a2e] p-8 rounded-lg flex flex-col items-center">
-                <div className="w-24 h-24 mb-6 flex items-center justify-center">
+              <div className="bg-[#1a1a2e] p-6 sm:p-8 rounded-lg flex flex-col items-center">
+                <div className="w-16 sm:w-24 h-16 sm:h-24 mb-6 flex items-center justify-center">
                   <svg
                     height="1em"
                     viewBox="0 0 24 24"
@@ -259,18 +263,18 @@ const Home: FC = () => {
       <section id="demo" className="py-20 bg-[#0f0f1a]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Terminal Demo
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
               See how Aurora terminal agent works
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-[#1a1a2e] rounded-lg p-6">
+            <div className="bg-[#1a1a2e] rounded-lg p-4 sm:p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-lg sm:text-xl font-bold text-white">
                   Aurora Terminal
                 </h3>
                 <div className="flex space-x-2">
@@ -280,7 +284,7 @@ const Home: FC = () => {
                 </div>
               </div>
 
-              <div className="bg-black rounded p-4 font-mono text-green-400">
+              <div className="bg-black rounded p-3 sm:p-4 font-mono text-sm text-green-400 overflow-x-auto">
                 <p>$ aurora</p>
                 <p className="text-white">
                   Welcome to Aurora Terminal Agent! How can I help you today?
@@ -289,7 +293,7 @@ const Home: FC = () => {
                 <p className="text-white">
                   I'll help you with that. Try this command:
                 </p>
-                <p className="text-blue-400">
+                <p className="text-blue-400 break-words">
                   find / -type f -size +100M -exec ls -lh {} \; 2&gt; /dev/null
                   | sort -rh
                 </p>
@@ -315,18 +319,20 @@ const Home: FC = () => {
       <section id="contact" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Contact Us</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Contact Us
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
               Download Aurora terminal agent to try it out or get in touch with
               us
             </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8">
               {/* Email Contact */}
-              <div className="bg-[#1a1a2e] p-8 rounded-lg flex flex-col items-center">
-                <div className="w-16 h-16 mb-6 flex items-center justify-center text-sky-400">
+              <div className="bg-[#1a1a2e] p-6 sm:p-8 rounded-lg flex flex-col items-center">
+                <div className="w-12 sm:w-16 h-12 sm:h-16 mb-6 flex items-center justify-center text-sky-400">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-full h-full"
@@ -341,22 +347,20 @@ const Home: FC = () => {
                     <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Email Us</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
+                  Email Us
+                </h3>
                 <a
                   href="mailto:info@the-box.dev"
                   className="text-sky-400 hover:text-sky-300 transition-colors text-lg"
                 >
                   info@the-box.dev
                 </a>
-                <p className="text-gray-300 text-center mt-4">
-                  Reach out to us for questions, support, or partnership
-                  opportunities
-                </p>
               </div>
 
               {/* GitHub */}
-              <div className="bg-[#1a1a2e] p-8 rounded-lg flex flex-col items-center">
-                <div className="w-16 h-16 mb-6 flex items-center justify-center text-sky-400">
+              <div className="bg-[#1a1a2e] p-6 sm:p-8 rounded-lg flex flex-col items-center">
+                <div className="w-12 sm:w-16 h-12 sm:h-16 mb-6 flex items-center justify-center text-sky-400">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-full h-full"
@@ -370,14 +374,14 @@ const Home: FC = () => {
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                   GitHub Repository
                 </h3>
                 <a
                   href="https://github.com/Firdavs9512/aurora-agent"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sky-400 hover:text-sky-300 transition-colors text-lg text-center"
+                  className="text-sky-400 hover:text-sky-300 transition-colors text-lg text-center break-all"
                 >
                   github.com/Firdavs9512/aurora-agent
                 </a>

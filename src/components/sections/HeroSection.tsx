@@ -1,8 +1,19 @@
-import { type FC } from 'react';
+import { type FC, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const HeroSection: FC = () => {
+  const [copied, setCopied] = useState(false);
+  
+  const installCommand = 'curl -fsSL https://aurora.the-box.dev/install.sh | sh';
+  
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(installCommand).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-10">
       <div className="max-w-5xl mx-auto text-center z-10">
@@ -31,6 +42,40 @@ const HeroSection: FC = () => {
           >
             Biz terminal bilan ishlashni osonlashtirадиган AI yechimlarini yaratamiz.
           </motion.p>
+          
+          {/* O'rnatish uchun curl buyrug'i */}
+          <motion.div
+            className="mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <div className="flex flex-col sm:flex-row items-center justify-center bg-[#000011]/40 backdrop-blur-md rounded-lg border border-white/5 overflow-hidden max-w-3xl mx-auto">
+              <div className="flex-grow p-3 sm:p-4 font-mono text-sm text-gray-300 text-left overflow-x-auto whitespace-nowrap">
+                $ {installCommand}
+              </div>
+              <button
+                onClick={copyToClipboard}
+                className="w-full sm:w-auto px-4 py-3 bg-sky-500/20 hover:bg-sky-500/30 text-white text-sm font-medium transition-all duration-200 border-t sm:border-t-0 sm:border-l border-white/5 flex items-center justify-center"
+              >
+                {copied ? (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Nusxalandi
+                  </>
+                ) : (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                    </svg>
+                    Nusxalash
+                  </>
+                )}
+              </button>
+            </div>
+          </motion.div>
           
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"

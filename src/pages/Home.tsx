@@ -1,7 +1,18 @@
-import { type FC } from 'react';
+import { type FC, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Home: FC = () => {
+  const [copied, setCopied] = useState(false);
+  
+  const installCommand = 'curl -fsSL https://aurora.the-box.dev/install.sh | sh';
+  
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(installCommand).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -15,22 +26,57 @@ const Home: FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6">
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 halo-heading">
               Aurora <span className="text-blue-400">AI</span> terminal.
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 halo-text">
               Biz terminal bilan ishlashni osonlashtiradigan AI yechimlarini yaratamiz.
             </p>
+            
+            {/* O'rnatish uchun curl buyrug'i */}
+            <motion.div
+              className="mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <div className="flex flex-col sm:flex-row items-center justify-center bg-[#000011]/40 backdrop-blur-md rounded-lg border border-white/5 overflow-hidden max-w-3xl mx-auto">
+                <div className="flex-grow p-3 sm:p-4 font-mono text-sm text-gray-300 text-left overflow-x-auto whitespace-nowrap">
+                  $ {installCommand}
+                </div>
+                <button
+                  onClick={copyToClipboard}
+                  className="w-full sm:w-auto px-4 py-3 bg-sky-500/20 hover:bg-sky-500/30 text-white text-sm font-medium transition-all duration-200 border-t sm:border-t-0 sm:border-l border-white/5 flex items-center justify-center"
+                >
+                  {copied ? (
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Nusxalandi
+                    </>
+                  ) : (
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                      </svg>
+                      Nusxalash
+                    </>
+                  )}
+                </button>
+              </div>
+            </motion.div>
+            
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a 
                 href="#services" 
-                className="bg-[#1a1a2e] hover:bg-[#2a2a3e] text-white font-medium py-3 px-8 rounded-md transition-colors"
+                className="halo-button-primary py-3 px-8 rounded-lg text-white font-medium transition-colors"
               >
                 xizmatlarimiz
               </a>
               <a 
                 href="#contact" 
-                className="bg-transparent border border-white/30 hover:bg-white/10 text-white font-medium py-3 px-8 rounded-md transition-colors"
+                className="halo-button py-3 px-8 rounded-lg text-white font-medium transition-colors"
               >
                 biz bilan bog'laning
               </a>

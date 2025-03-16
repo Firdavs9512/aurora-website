@@ -1,0 +1,40 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="630" fill="#0f0f1a" />
+
+    <!-- Background gradient -->
+    <circle cx="600" cy="315" r="400" fill="url(#paint0_radial)" fill-opacity="0.2" />
+
+    <!-- Terminal window -->
+    <rect x="300" y="200" width="600" height="350" rx="8" fill="#000011" stroke="#1a1a2e" stroke-width="2" />
+
+    <!-- Terminal header -->
+    <rect x="300" y="200" width="600" height="40" rx="8" fill="#1a1a2e" />
+
+    <!-- Terminal buttons -->
+    <circle cx="330" cy="220" r="8" fill="#f87171" />
+    <circle cx="360" cy="220" r="8" fill="#fbbf24" />
+    <circle cx="390" cy="220" r="8" fill="#34d399" />
+
+    <!-- Terminal content -->
+    <text x="330" y="280" font-family="'JetBrains Mono', monospace" font-size="20" fill="#0ea5e9">$ aurora</text>
+    <text x="330" y="320" font-family="'JetBrains Mono', monospace" font-size="20" fill="#ffffff">Welcome to Aurora
+        Terminal Agent!</text>
+    <text x="330" y="360" font-family="'JetBrains Mono', monospace" font-size="20" fill="#ffffff">How can I help you
+        today?</text>
+
+    <!-- Logo and text -->
+    <text x="600" y="140" font-family="'Inter', sans-serif" font-size="60" font-weight="700" fill="#ffffff"
+        text-anchor="middle">Aurora <tspan fill="#0ea5e9">AI</tspan> Terminal</text>
+    <text x="600" y="580" font-family="'Inter', sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">Free and
+        Open Source AI Terminal Assistant</text>
+
+
+    <!-- Definitions -->
+    <defs>
+        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(600 315) rotate(90) scale(400)">
+            <stop stop-color="#0ea5e9" />
+            <stop offset="1" stop-color="#0f0f1a" stop-opacity="0" />
+        </radialGradient>
+    </defs>
+</svg>

@@ -289,17 +289,76 @@ const Home: FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Contact Us</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Download Aurora terminal agent to try it out
+              Download Aurora terminal agent to try it out or get in touch with
+              us
             </p>
           </div>
 
-          <div className="max-w-md mx-auto">
-            <a
-              href="#"
-              className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-md text-center text-lg transition-colors"
-            >
-              Download Aurora Terminal Agent
-            </a>
+          <div className="max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              {/* Email Contact */}
+              <div className="bg-[#1a1a2e] p-8 rounded-lg flex flex-col items-center">
+                <div className="w-16 h-16 mb-6 flex items-center justify-center text-sky-400">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-full h-full"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Email Us</h3>
+                <a
+                  href="mailto:info@the-box.dev"
+                  className="text-sky-400 hover:text-sky-300 transition-colors text-lg"
+                >
+                  info@the-box.dev
+                </a>
+                <p className="text-gray-300 text-center mt-4">
+                  Reach out to us for questions, support, or partnership
+                  opportunities
+                </p>
+              </div>
+
+              {/* GitHub */}
+              <div className="bg-[#1a1a2e] p-8 rounded-lg flex flex-col items-center">
+                <div className="w-16 h-16 mb-6 flex items-center justify-center text-sky-400">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-full h-full"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  GitHub Repository
+                </h3>
+                <a
+                  href="https://github.com/Firdavs9512/aurora-agent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky-400 hover:text-sky-300 transition-colors text-lg text-center"
+                >
+                  github.com/Firdavs9512/aurora-agent
+                </a>
+                <p className="text-gray-300 text-center mt-4">
+                  Check out our code, report issues, or contribute to the
+                  project
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

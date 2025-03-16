@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# Aurora Terminal Agent - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the landing page for the Aurora Terminal Agent, an AI-powered assistant for terminal users. The website showcases the features, capabilities, and benefits of using Aurora Terminal Agent.
 
-Currently, two official plugins are available:
+## About Aurora Terminal Agent
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Aurora Terminal Agent is a 100% free and open-source AI assistant that makes working with the terminal easier. It provides intelligent command suggestions, natural language interface, and detailed command explanations to help users navigate the command line more efficiently.
 
-## Expanding the ESLint configuration
+## Website Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Modern Design**: Built with React, TypeScript, and Tailwind CSS for a sleek and responsive user experience
+- **Interactive Elements**: Animated components and interactive demos to showcase the agent's capabilities
+- **OS Detection**: Automatically detects the user's operating system to provide the correct download link
+- **Mobile Responsive**: Fully responsive design that works on all device sizes
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Technologies Used
+
+- **React**: Frontend library for building user interfaces
+- **TypeScript**: Type-safe JavaScript for better development experience
+- **Vite**: Next-generation frontend tooling for faster development
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **Framer Motion**: Animation library for creating smooth transitions and effects
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Firdavs9512/aurora-agent-website.git
+   cd aurora-agent-website
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Building for Production
+
+To build the website for production:
+
+```bash
+npm run build
+# or
+yarn build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The built files will be in the `dist` directory.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Contributing
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Contributions are welcome! If you'd like to contribute to the Aurora Terminal Agent landing page, please:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Related Projects
+
+- [Aurora Terminal Agent](https://github.com/Firdavs9512/aurora-agent) - The main repository for the Aurora Terminal Agent
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+- Email: info@the-box.dev
+- GitHub: [https://github.com/Firdavs9512/aurora-agent](https://github.com/Firdavs9512/aurora-agent)

@@ -25,13 +25,17 @@ const Header: FC = () => {
 
   const navItems = [
     { name: "services", path: "#services" },
-    { name: "process", path: "#process" },
-    { name: "team", path: "#team" },
-    { name: "pricing", path: "#pricing" },
-    { name: "reviews", path: "#reviews" },
-    { name: "FAQ", path: "#faq" },
+    { name: "demo", path: "#demo" },
     { name: "contact", path: "#contact" },
   ];
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.querySelector(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <motion.header
@@ -62,6 +66,10 @@ const Header: FC = () => {
                     key={item.name}
                     href={item.path}
                     className="text-gray-300 hover:text-white text-sm font-medium transition-all duration-200"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.path);
+                    }}
                   >
                     {item.name}
                   </a>
@@ -75,6 +83,10 @@ const Header: FC = () => {
             <a
               href="#contact"
               className="bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("#contact");
+              }}
             >
               Download
             </a>
@@ -144,7 +156,10 @@ const Header: FC = () => {
                 key={item.name}
                 href={item.path}
                 className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.path);
+                }}
               >
                 {item.name}
               </a>
@@ -153,7 +168,10 @@ const Header: FC = () => {
               <a
                 href="#contact"
                 className="block w-full bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-4 py-2 rounded-lg text-base font-medium text-center"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("#contact");
+                }}
               >
                 Download
               </a>

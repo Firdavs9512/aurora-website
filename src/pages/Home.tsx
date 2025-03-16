@@ -14,6 +14,13 @@ const Home: FC = () => {
     });
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.querySelector(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -117,6 +124,10 @@ const Home: FC = () => {
               <a
                 href="#contact"
                 className="halo-button py-3 px-8 rounded-lg text-white font-medium transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("#contact");
+                }}
               >
                 Contact Us
               </a>

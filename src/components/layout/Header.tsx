@@ -55,7 +55,7 @@ const Header: FC = () => {
 
           {/* Markazlashgan menyu - desktop */}
           <div className="hidden md:block">
-            <div className="bg-[#000011]/40 backdrop-blur-md rounded-full px-6 py-2 border border-white/5">
+            <div className="bg-[#000011]/40 backdrop-blur-md rounded-full px-6 py-2.5 border border-white/5">
               <div className="flex items-center space-x-8">
                 {navItems.map((item) => (
                   <a
@@ -74,7 +74,7 @@ const Header: FC = () => {
           <div className="hidden md:block">
             <a
               href="#contact"
-              className="bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300"
+              className="bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300"
             >
               Yuklab olish
             </a>

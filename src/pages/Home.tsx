@@ -17,7 +17,7 @@ const Home: FC = () => {
   const scrollToSection = (sectionId: string) => {
     const section = document.querySelector(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
     }
   };
 

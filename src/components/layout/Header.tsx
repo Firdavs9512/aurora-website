@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [userOS, setUserOS] = useState<string | null>(null);
+  const [userArch, setUserArch] = useState<string | null>(null);
 
   // Track scroll position
   useEffect(() => {
@@ -23,6 +25,34 @@ const Header: FC = () => {
     };
   }, []);
 
+  // Detect user's OS and architecture
+  useEffect(() => {
+    // Detect OS
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    let detectedOS = null;
+
+    if (userAgent.indexOf("win") !== -1) detectedOS = "windows";
+    else if (userAgent.indexOf("mac") !== -1) detectedOS = "macos";
+    else if (userAgent.indexOf("linux") !== -1) detectedOS = "linux";
+    else if (userAgent.indexOf("android") !== -1) detectedOS = "android";
+    else if (userAgent.indexOf("ios") !== -1) detectedOS = "ios";
+
+    setUserOS(detectedOS);
+
+    // Detect architecture (simplified)
+    let detectedArch = null;
+    if (
+      userAgent.indexOf("arm") !== -1 ||
+      userAgent.indexOf("aarch64") !== -1
+    ) {
+      detectedArch = "arm";
+    } else {
+      detectedArch = "amd64"; // Default to amd64/x86_64
+    }
+
+    setUserArch(detectedArch);
+  }, []);
+
   const navItems = [
     { name: "services", path: "#services" },
     { name: "providers", path: "#providers" },
@@ -33,9 +63,45 @@ const Header: FC = () => {
   const scrollToSection = (sectionId: string) => {
     const section = document.querySelector(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
     }
+  };
+
+  const handleDownload = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    // Base GitHub releases URL
+    const githubReleasesUrl =
+      "https://github.com/Firdavs9512/aurora-agent/releases";
+
+    // If we can't detect OS or it's not a desktop OS, redirect to GitHub releases page
+    if (!userOS || userOS === "android" || userOS === "ios") {
+      window.open(githubReleasesUrl, "_blank");
+      return;
+    }
+
+    // Construct download URL based on OS and architecture
+    let downloadUrl = `${githubReleasesUrl}/latest/download/aurora-agent-`;
+
+    switch (userOS) {
+      case "windows":
+        downloadUrl += `windows-${userArch}.zip`;
+        break;
+      case "macos":
+        downloadUrl += `darwin-${userArch}.tar.gz`;
+        break;
+      case "linux":
+        downloadUrl += `linux-${userArch}.tar.gz`;
+        break;
+      default:
+        // Fallback to releases page
+        window.open(githubReleasesUrl, "_blank");
+        return;
+    }
+
+    // Initiate download
+    window.open(downloadUrl, "_blank");
   };
 
   return (
@@ -82,14 +148,25 @@ const Header: FC = () => {
           {/* Right side button */}
           <div className="hidden md:block">
             <a
-              href="#contact"
-              className="bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("#contact");
-              }}
+              href="#"
+              className="bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 flex items-center"
+              onClick={handleDownload}
             >
-              Download
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+              Download{userOS ? ` for ${userOS}` : ""}
             </a>
           </div>
 
@@ -167,14 +244,25 @@ const Header: FC = () => {
             ))}
             <div className="pt-4 pb-2">
               <a
-                href="#contact"
-                className="block w-full bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-4 py-2 rounded-lg text-base font-medium text-center"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("#contact");
-                }}
+                href="#"
+                className=" w-full bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-4 py-2 rounded-lg text-base font-medium text-center flex items-center justify-center"
+                onClick={handleDownload}
               >
-                Download
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
+                </svg>
+                Download{userOS ? ` for ${userOS}` : ""}
               </a>
             </div>
           </div>

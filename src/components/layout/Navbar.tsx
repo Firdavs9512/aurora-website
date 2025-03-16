@@ -1,12 +1,11 @@
-import { type FC, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-const Header: FC = () => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll holatini kuzatish
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -17,29 +16,25 @@ const Header: FC = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  const navItems = [
-    { name: "xizmatlar", path: "#services" },
-    { name: "jarayon", path: "#process" },
-    { name: "jamoa", path: "#team" },
-    { name: "narxlar", path: "#pricing" },
-    { name: "sharhlar", path: "#reviews" },
-    { name: "FAQ", path: "#faq" },
-    { name: "aloqa", path: "#contact" },
-  ];
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <motion.header
+    <motion.nav 
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-4" : "py-6"
+        scrolled 
+          ? 'py-4 bg-[#000011]/70 backdrop-blur-xl' 
+          : 'py-6 bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,38 +47,46 @@ const Header: FC = () => {
               </span>
             </Link>
           </div>
-
+          
           {/* Markazlashgan menyu - desktop */}
           <div className="hidden md:block">
             <div className="bg-[#000011]/40 backdrop-blur-md rounded-full px-6 py-2 border border-white/5">
               <div className="flex items-center space-x-8">
-                {navItems.map((item) => (
-                  <a
+                {[
+                  { name: 'xizmatlar', path: '/xizmatlar' },
+                  { name: 'jarayon', path: '/jarayon' },
+                  { name: 'jamoa', path: '/jamoa' },
+                  { name: 'narxlar', path: '/narxlar' },
+                  { name: 'sharhlar', path: '/sharhlar' },
+                  { name: 'FAQ', path: '/faq' },
+                  { name: 'aloqa', path: '/aloqa' }
+                ].map((item) => (
+                  <Link
                     key={item.name}
-                    href={item.path}
+                    to={item.path}
                     className="text-gray-300 hover:text-white text-sm font-medium transition-all duration-200"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
           </div>
-
+          
           {/* O'ng tomondagi tugma */}
           <div className="hidden md:block">
-            <a
-              href="#contact"
+            <Link 
+              to="/yuklab-olish" 
               className="bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300"
             >
               Yuklab olish
-            </a>
+            </Link>
           </div>
-
+          
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={toggleMenu}
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none"
               aria-controls="mobile-menu"
@@ -130,39 +133,47 @@ const Header: FC = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
+          animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden bg-[#000011]/90 backdrop-blur-xl border-t border-white/5 mt-2"
+          className="md:hidden bg-[#000011]/90 backdrop-blur-xl border-t border-white/5 mt-2" 
           id="mobile-menu"
         >
           <div className="px-4 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <a
+            {[
+              { name: 'xizmatlar', path: '/xizmatlar' },
+              { name: 'jarayon', path: '/jarayon' },
+              { name: 'jamoa', path: '/jamoa' },
+              { name: 'narxlar', path: '/narxlar' },
+              { name: 'sharhlar', path: '/sharhlar' },
+              { name: 'FAQ', path: '/faq' },
+              { name: 'aloqa', path: '/aloqa' }
+            ].map((item) => (
+              <Link
                 key={item.name}
-                href={item.path}
+                to={item.path}
                 className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <div className="pt-4 pb-2">
-              <a
-                href="#contact"
+              <Link 
+                to="/yuklab-olish" 
                 className="block w-full bg-[#000011]/60 hover:bg-[#000011]/80 border border-white/10 text-white px-4 py-2 rounded-lg text-base font-medium text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Yuklab olish
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>
       )}
-    </motion.header>
+    </motion.nav>
   );
 };
 
-export default Header;
+export default Navbar; 

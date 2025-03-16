@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC } from "react";
 
 const Footer: FC = () => {
   const currentYear = new Date().getFullYear();
@@ -10,9 +10,9 @@ const Footer: FC = () => {
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <span className="text-white font-bold text-xl">Aurora</span>
           </div>
-          
+
           <p className="text-gray-400 text-sm">
-            &copy; {currentYear} Aurora Terminal Agent. Barcha huquqlar himoyalangan.
+            &copy; {currentYear} Aurora Terminal Agent.
           </p>
         </div>
       </div>
@@ -20,4 +20,4 @@ const Footer: FC = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

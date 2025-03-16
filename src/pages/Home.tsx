@@ -30,10 +30,10 @@ const Home: FC = () => {
               Aurora <span className="text-blue-400">AI</span> terminal.
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 halo-text">
-              Biz terminal bilan ishlashni osonlashtiradigan AI yechimlarini yaratamiz.
+              We create AI solutions that make working with the terminal easier.
             </p>
             
-            {/* O'rnatish uchun curl buyrug'i */}
+            {/* Installation curl command */}
             <motion.div
               className="mb-8"
               initial={{ opacity: 0, y: 20 }}
@@ -53,14 +53,14 @@ const Home: FC = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      Nusxalandi
+                      Copied
                     </>
                   ) : (
                     <>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                       </svg>
-                      Nusxalash
+                      Copy
                     </>
                   )}
                 </button>
@@ -72,13 +72,13 @@ const Home: FC = () => {
                 href="#services" 
                 className="halo-button-primary py-3 px-8 rounded-lg text-white font-medium transition-colors"
               >
-                xizmatlarimiz
+                Our Services
               </a>
               <a 
                 href="#contact" 
                 className="halo-button py-3 px-8 rounded-lg text-white font-medium transition-colors"
               >
-                biz bilan bog'laning
+                Contact Us
               </a>
             </div>
           </motion.div>
@@ -89,27 +89,27 @@ const Home: FC = () => {
       <section id="services" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Xizmatlarimiz</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Our Services</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Aurora terminal agenti sizga quyidagi imkoniyatlarni taqdim etadi
+              Aurora terminal agent provides you with the following capabilities
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-[#1a1a2e] p-8 rounded-lg">
               <div className="text-blue-400 text-4xl mb-4">🔍</div>
-              <h3 className="text-xl font-bold text-white mb-3">Aqlli buyruq tavsiyalari</h3>
-              <p className="text-gray-300">Ehtiyojlaringiz va kontekstga asoslangan intellektual buyruq tavsiyalarini oling.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Smart Command Suggestions</h3>
+              <p className="text-gray-300">Get intelligent command suggestions based on your needs and context.</p>
             </div>
             <div className="bg-[#1a1a2e] p-8 rounded-lg">
               <div className="text-blue-400 text-4xl mb-4">💬</div>
-              <h3 className="text-xl font-bold text-white mb-3">Tabiiy til interfeysi</h3>
-              <p className="text-gray-300">Murakkab buyruq sintaksisini yodlash o'rniga, terminal bilan tabiiy tilda muloqot qiling.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Natural Language Interface</h3>
+              <p className="text-gray-300">Communicate with the terminal in natural language instead of memorizing complex command syntax.</p>
             </div>
             <div className="bg-[#1a1a2e] p-8 rounded-lg">
               <div className="text-blue-400 text-4xl mb-4">📝</div>
-              <h3 className="text-xl font-bold text-white mb-3">Buyruq tushuntirishlari</h3>
-              <p className="text-gray-300">Buyruqlarni bajarishdan oldin ularning nima qilishini batafsil tushuntirishlarini oling.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Command Explanations</h3>
+              <p className="text-gray-300">Get detailed explanations of what commands do before executing them.</p>
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ const Home: FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Terminal Demo</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Aurora terminal agentining ishlashini ko'ring
+              See how Aurora terminal agent works
             </p>
           </div>
 
@@ -138,16 +138,16 @@ const Home: FC = () => {
               
               <div className="bg-black rounded p-4 font-mono text-green-400">
                 <p>$ aurora</p>
-                <p className="text-white">Aurora Terminal Agentiga xush kelibsiz! Sizga qanday yordam bera olaman?</p>
-                <p>$ tizimimdagi katta fayllarni topishga yordam bering</p>
-                <p className="text-white">Men yordam beraman. Quyidagi buyruqni sinab ko'ring:</p>
+                <p className="text-white">Welcome to Aurora Terminal Agent! How can I help you today?</p>
+                <p>$ help me find large files on my system</p>
+                <p className="text-white">I'll help you with that. Try this command:</p>
                 <p className="text-blue-400">find / -type f -size +100M -exec ls -lh {} \; 2&gt; /dev/null | sort -rh</p>
-                <p>$ bu buyruq nima qiladi?</p>
-                <p className="text-white">Bu buyruq quyidagilarni bajaradi:</p>
-                <p className="text-white">1. Tizimingizda 100MB dan katta barcha fayllarni qidiradi</p>
-                <p className="text-white">2. Har bir fayl uchun batafsil ma'lumotlarni ko'rsatadi</p>
-                <p className="text-white">3. Xatolik xabarlarini yo'q qiladi</p>
-                <p className="text-white">4. Natijalarni hajmi bo'yicha tartiblaydi (eng kattasidan boshlab)</p>
+                <p>$ what does this command do?</p>
+                <p className="text-white">This command does the following:</p>
+                <p className="text-white">1. Searches for all files larger than 100MB on your system</p>
+                <p className="text-white">2. Shows detailed information for each file</p>
+                <p className="text-white">3. Suppresses error messages</p>
+                <p className="text-white">4. Sorts results by size (largest first)</p>
               </div>
             </div>
           </div>
@@ -158,9 +158,9 @@ const Home: FC = () => {
       <section id="contact" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Biz bilan bog'laning</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Contact Us</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Aurora terminal agentini sinab ko'rish uchun yuklab oling
+              Download Aurora terminal agent to try it out
             </p>
           </div>
 
@@ -169,7 +169,7 @@ const Home: FC = () => {
               href="#" 
               className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-md text-center text-lg transition-colors"
             >
-              Aurora Terminal Agentini yuklab olish
+              Download Aurora Terminal Agent
             </a>
           </div>
         </div>

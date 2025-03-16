@@ -40,10 +40,10 @@ const HeroSection: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Biz terminal bilan ishlashni osonlashtirадиган AI yechimlarini yaratamiz.
+            We create AI solutions that make working with the terminal easier.
           </motion.p>
           
-          {/* O'rnatish uchun curl buyrug'i */}
+          {/* Installation curl command */}
           <motion.div
             className="mb-8"
             initial={{ opacity: 0, y: 20 }}
@@ -63,14 +63,14 @@ const HeroSection: FC = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Nusxalandi
+                    Copied
                   </>
                 ) : (
                   <>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                     </svg>
-                    Nusxalash
+                    Copy
                   </>
                 )}
               </button>
@@ -84,17 +84,17 @@ const HeroSection: FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Link 
-              to="/xizmatlar" 
+              to="/services" 
               className="halo-button-primary px-8 py-3 rounded-lg text-white font-medium text-lg"
             >
-              xizmatlarimiz
+              Our Services
             </Link>
             
             <Link 
-              to="/biz-haqimizda" 
+              to="/about-us" 
               className="halo-button px-8 py-3 rounded-lg text-white font-medium text-lg"
             >
-              biz bilan bog'lanish
+              Contact Us
             </Link>
           </motion.div>
         </motion.div>
@@ -115,17 +115,17 @@ const HeroSection: FC = () => {
             <div className="space-y-2">
               <p><span className="text-green-400">user@aurora:~$</span> aurora --help</p>
               <p className="text-sky-400">Aurora AI Terminal v1.0.0</p>
-              <p>Quyidagi buyruqlar mavjud:</p>
-              <p>  <span className="text-yellow-400">analyze</span>    - Kod tahlili</p>
-              <p>  <span className="text-yellow-400">optimize</span>   - Kodni optimallashtirish</p>
-              <p>  <span className="text-yellow-400">generate</span>   - Yangi kod yaratish</p>
-              <p>  <span className="text-yellow-400">explain</span>    - Kodni tushuntirish</p>
+              <p>Available commands:</p>
+              <p>  <span className="text-yellow-400">analyze</span>    - Code analysis</p>
+              <p>  <span className="text-yellow-400">optimize</span>   - Code optimization</p>
+              <p>  <span className="text-yellow-400">generate</span>   - Generate new code</p>
+              <p>  <span className="text-yellow-400">explain</span>    - Explain code</p>
               <p><span className="text-green-400">user@aurora:~$</span> <span className="animate-pulse">_</span></p>
             </div>
           </div>
         </motion.div>
         
-        {/* Halo template kabi qo'shimcha elementlar */}
+        {/* Additional elements like Halo template */}
         <div className="absolute bottom-10 left-0 right-0 flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -146,7 +146,7 @@ const HeroSection: FC = () => {
           </motion.div>
         </div>
         
-        {/* Halo template kabi floating badges */}
+        {/* Floating badges like Halo template */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
